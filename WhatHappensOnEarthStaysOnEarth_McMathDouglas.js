@@ -1,10 +1,12 @@
+
+
 var numT = 0
 
 var arthurStatus = `MacArthur stands as the central figure of an organized American elite`
 var hooverStatus = `Hoover stands as a major threat to your goals`
 var rockefellerStatus = `Rockefeller stands as an American oligarch`
 var hughesStatus = `Hughes is a threat`
-const GAMESTATE = {
+const gameState = {
     "NeccessaryVars": {
         "pk": "Bureau",
         "model": "Functionality",
@@ -16,13 +18,9 @@ const GAMESTATE = {
             "FBIPower": 10,
             "SenatePower": 0
         },
-            "QuestionPictureHolder": `<img style='margin-top: -18px;width: 254px;height: 105px;object-fit: cover;object-position: top;border-style: double;border-color: white;'src='https://i.ibb.co/9HtQhBDP/373c5cbe-a4ad-4689-a529-3b2674fd37e4-1024x671.jpg'></img>`
-    },
-    "Answer_Choices": [],
-    "Question_Marker": [],
-    "Statistics": {}
+        "QuestionPictureHolder": `<img style='margin-top: -18px;width: 254px;height: 105px;object-fit: cover;object-position: top;border-style: double;border-color: white;'src='https://i.ibb.co/9HtQhBDP/373c5cbe-a4ad-4689-a529-3b2674fd37e4-1024x671.jpg'></img>`
+    }
 }
-var QuestionImage = GAMESTATE.NeccessaryVars.QuestionPictureHolder
 
 const textArray = {
     qtxt: {
@@ -130,7 +128,6 @@ const textArray = {
         HooverRemovalUnattempted: `Permanent debuff and potential weakness but also maybe neccesary`,
         CommandeerFBI: `SIDNEY MCMATH: You work to commandeer the FBI to serve your own purposes`,
         WeakenFBI: `SIDNEY MCMATH: You work to fuck over the FBI permanently.`,
-        FiscalImprovement: `LBJ: You increase military snadnfew its a spending thingy fuck you`,
         FiscalDecrease: `LBJ: You increase military snadnfew its a spending thingy fuck you`,
         ArrestMacArthurSuccess: `JAMES ROWE: You Succeed`,
         ArrestMacArthurFailure: `JAMES ROWE: You Fail`,
@@ -446,12 +443,15 @@ e.answers_json = [
         }
     }
 ]
+
+
+
 const QuestionSlotOne = [
     {
         "model": "campaign_trail.question",
         "pk": "Opening Meeting",
         "fields": {
-            "effects": {},
+            "effects": { "QuestionPictureHolder": `<img style='margin-top: -18px;width: 254px;height: 105px;object-fit: cover;object-position: top;border-style: double;border-color: white;'src='https://s3.amazonaws.com/NARAprodstorage/lz/presidential-libraries/truman/photographs/82/82-57-51.jpg'>` },
             "pass_conditions": { "gameEnabled": true },
             "filter_conditions": { "gameEnabled": true },
             "description": textArray.qtxt.SecretMeeting,
@@ -464,7 +464,7 @@ const QuestionSlotTwo = [
         "model": "campaign_trail.question",
         "pk": "Inaugural Ball",
         "fields": {
-            "effects": { "QuestionPictureHolder": `<img style='margin-top: -18px;width: 254px;height: 105px;object-fit: cover;object-position: top;border-style: double;border-color: white;'src='https://i.imgur.com/P1hpoBE.png'>` },
+            "effects": { "QuestionPictureHolder": `<img style='margin-top: -18px;width: 254px;height: 105px;object-fit: cover;object-position: top;border-style: double;border-color: white;'src='https://d1y822qhq55g6.cloudfront.net/default/_superImage/WHHAJournal270035.jpg'>` },
             "pass_conditions": { "gameEnabled": true },
             "filter_conditions": { "gameEnabled": true },
             "description": textArray.qtxt.InaugurationBall,
@@ -477,7 +477,7 @@ const QuestionSlotThree = [
         "model": "campaign_trail.question",
         "pk": "Helen",
         "fields": {
-            "effects": { "QuestionPictureHolder": 'https://i.imgur.com/P1hpoBE.png' },
+            "effects": { "QuestionPictureHolder": `<img style='margin-top: -18px;width: 254px;height: 105px;object-fit: cover;object-position: top;border-style: double;border-color: white;'src='https://calisphere.org/clip/500x500/26094/ee95fd0d82ec4203d3051e5d25116d89'>` },
             "pass_conditions": { "gameEnabled": true },
             "filter_conditions": { "gameEnabled": true },
             "description": textArray.qtxt.Helen,
@@ -1674,18 +1674,6 @@ const AllAnswers = [
             "description": textArray.atxt.MilitaryDilemmaBasic
         }
     },
-            {
-        "model": "campaign_trail.answer",
-        "pk": "FiscalImprovement",
-        "fields": {
-            "pass_effects": {},
-            "fail_effects": {},
-            "pass_conditions": { "gameEnabled": true },
-            "filter_conditions": { "gameEnabled": true },
-            "question": "Fiscal Decision",
-            "description": textArray.atxt.FiscalImprovement
-        }
-    },
                 {
         "model": "campaign_trail.answer",
         "pk": "Fiscal Decrease",
@@ -1834,35 +1822,12 @@ const AllAnswers = [
 
 ]
 function logicalChoiceSystem() {
-const RecentAnswer = e.player_answers[e.player_answers.length - 1];
-const returnedAnswer = AllAnswers.find(a => a.pk === RecentAnswer) || "parody";
-
-if (returnedAnswer !== "parody") {
-  const { pass_conditions, pass_effects, fail_effects } = returnedAnswer.fields;
-
-  const allConditionsMet = Object.entries(pass_conditions).every(
-    ([key, value]) => GAMESTATE.NeccessaryVars.Variables[key] === value
-  );
-
-  if (allConditionsMet) {
-    for (const [key, value] of Object.entries(pass_effects)) {
-      GAMESTATE.NeccessaryVars.Variables[key] =
-        (GAMESTATE.NeccessaryVars.Variables[key] || 0) + value;
-    }
-  } else {
-    for (const [key, value] of Object.entries(fail_effects)) {
-      GAMESTATE.NeccessaryVars.Variables[key] =
-        (GAMESTATE.NeccessaryVars.Variables[key] || 0) + value;
-    }
-  }
-}
-
 
 const AllQuestions = [];
 
 function applyFilter(slot) {
   return slot.filter(item =>
-    Object.entries(GAMESTATE.NeccessaryVars.Variables).every(([key, value]) =>
+    Object.entries(gameState.NeccessaryVars.Variables).every(([key, value]) =>
       key in item.fields.filter_conditions
         ? item.fields.filter_conditions[key] === value
         : true
@@ -1910,12 +1875,71 @@ AllQuestions.push(// so it filters the array of possible questions for each slot
   ].flat()
 );
 
+const RecentAnswer = e.player_answers[e.player_answers.length - 1];
+const returnedAnswer = AllAnswers.find(a => a.pk === RecentAnswer) || "parody";
+
+
+if (returnedAnswer !== "parody") {
+
+    let CurrentQuestion = null;
+
+for (let q = 0; q < AllQuestions.length; q++) {
+  if (AllQuestions[q].pk === returnedAnswer.fields.question) {
+    CurrentQuestion =  AllQuestions[q];
+    break;
+  }
+}
+
+
+if (!CurrentQuestion) {
+  console.error("error you stupif ", returnedAnswer.fields.question);
+  return;
+}
+
+const effects = CurrentQuestion.fields.effects;
+
+// im sorry
+if (effects.QuestionPictureHolder) {
+    gameState.NeccessaryVars.QuestionPictureHolder = effects.QuestionPictureHolder;
+}
+
+
+for (const [key, value] of Object.entries(effects)) {
+
+    if (key === "QuestionPictureHolder") continue;
+
+    gameState.NeccessaryVars.Variables[key] =
+        (gameState.NeccessaryVars.Variables[key] || 0) + value;
+}
+
+
+  const { pass_conditions, pass_effects, fail_effects } = returnedAnswer.fields;
+
+  const allConditionsMet = Object.entries(pass_conditions).every(
+    ([key, value]) => gameState.NeccessaryVars.Variables[key] === value
+  );
+
+  if (allConditionsMet) {
+    for (const [key, value] of Object.entries(pass_effects)) {
+      gameState.NeccessaryVars.Variables[key] =
+        (gameState.NeccessaryVars.Variables[key] || 0) + value;
+    }
+  } else {
+    for (const [key, value] of Object.entries(fail_effects)) {
+      gameState.NeccessaryVars.Variables[key] =
+        (gameState.NeccessaryVars.Variables[key] || 0) + value;
+    }
+  }
+}
+
+
+
 //var QuestionImage = `<img style='margin-top: -18px;width: 254px;height: 105px;object-fit: cover;object-position: center;border-style: double;border-color: white;'src='https://files.catbox.moe/wgvdwm.png'>`;
     e.questions_json = AllQuestions.flat();// this pushes the previous array into the actual game interface. .flat makes it take a snapshot of the current value, and not make it a dependent variable
 
 
     e.answers_json = AllAnswers.filter(item =>
-        Object.entries(GAMESTATE.NeccessaryVars.Variables).every(([key, value]) =>
+        Object.entries(gameState.NeccessaryVars.Variables).every(([key, value]) =>
             key in item.fields.filter_conditions
                 ? item.fields.filter_conditions[key] === value // since answers are fucking losers and can be used however, they just get one big array instead of the fancy slots that questions get
                 : true
@@ -6847,468 +6871,643 @@ campaignTrail_temp.answer_feedback_json = [
         "model": "campaign_trail.answer_feedback",
         "pk": 120,
         "fields": {
-            "answer": "MainAddress2",
+            "answer": "Clark Dialog",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>Clark Dialog</p>"
         }
     },
     {
         "model": "campaign_trail.answer_feedback",
         "pk": 130,
         "fields": {
-            "answer": 13,
+            "answer": "George Dialog",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>George Dialog</p>"
         }
     },
     {
         "model": "campaign_trail.answer_feedback",
         "pk": 210,
         "fields": {
-            "answer": 21,
+            "answer": "James Dialog",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>James Dialog</p>"
         }
     },
     {
         "model": "campaign_trail.answer_feedback",
         "pk": 220,
         "fields": {
-            "answer": 22,
+            "answer": "Speak to Eisenhower",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>Speak to Eisenhower</p>"
         }
     },
     {
         "model": "campaign_trail.answer_feedback",
         "pk": 310,
         "fields": {
-            "answer": 31,
+            "answer": "Speak to Hughes",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>Speak to Hughes</p>"
         }
     }, {
         "model": "campaign_trail.answer_feedback",
         "pk": 320,
         "fields": {
-            "answer": 32,
+            "answer": "Speak to Faubus",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>Speak to Faubus</p>"
         }
     }, {
         "model": "campaign_trail.answer_feedback",
         "pk": 330,
         "fields": {
-            "answer": 33,
+            "answer": "Speak to Kennedy",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>Speak to Kennedy</p>"
         }
     }, {
         "model": "campaign_trail.answer_feedback",
         "pk": 410,
         "fields": {
-            "answer": 41,
+            "answer": "Helen Reduced Role",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>Helen Reduced Role</p>"
         }
     }, {
         "model": "campaign_trail.answer_feedback",
         "pk": 420,
         "fields": {
-            "answer": 42,
+            "answer": "Helen Increased Role",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>Helen Increased Role</p>"
         }
     }, {
         "model": "campaign_trail.answer_feedback",
         "pk": 510,
         "fields": {
-            "answer": 51,
+            "answer": "Press Contact Basic",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>Press Contact Basic</p>"
         }
     }, {
         "model": "campaign_trail.answer_feedback",
         "pk": 520,
         "fields": {
-            "answer": 52,
+            "answer": "Military Contact",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>Military Contact</p>"
         }
     }, {
         "model": "campaign_trail.answer_feedback",
         "pk": 530,
         "fields": {
-            "answer": 53,
+            "answer": "Senate Progressive Allies",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>Senate Progressive Allies</p>"
         }
     }, {
         "model": "campaign_trail.answer_feedback",
         "pk": 540,
         "fields": {
-            "answer": 54,
+            "answer": "Senate Republican Allies",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>Senate Republican Allies</p>"
         }
     }, {
         "model": "campaign_trail.answer_feedback",
         "pk": 610,
         "fields": {
-            "answer": 61,
+            "answer": "Senate Reactionary Allies",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>Senate Reactionary Allies</p>"
         }
     }, {
         "model": "campaign_trail.answer_feedback",
         "pk": 620,
         "fields": {
-            "answer": 62,
+            "answer": "Rigeway Reject",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>Rigeway Reject</p>"
         }
     }, {
         "model": "campaign_trail.answer_feedback",
         "pk": 630,
         "fields": {
-            "answer": 63,
+            "answer": "Rigeway Deal",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>Rigeway Deal</p>"
         }
     },
     {
         "model": "campaign_trail.answer_feedback",
         "pk": 710,
         "fields": {
-            "answer": 71,
+            "answer": "Rigeway Compromise",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>Rigeway Compromise</p>"
         }
     },
     {
         "model": "campaign_trail.answer_feedback",
         "pk": 720,
         "fields": {
-            "answer": 72,
+            "answer": "Large Spending Proposal",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>Large Spending Proposal</p>"
         }
     },
     {
         "model": "campaign_trail.answer_feedback",
         "pk": 730,
         "fields": {
-            "answer": 73,
+            "answer": "Moderate Spending Proposal",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>Moderate Spending Proposal</p>"
         }
     },
     {
         "model": "campaign_trail.answer_feedback",
         "pk": 810,
         "fields": {
-            "answer": 81,
+            "answer": "No Spending Proposal",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>No Spending Proposal</p>"
         }
     },
     {
         "model": "campaign_trail.answer_feedback",
         "pk": 820,
         "fields": {
-            "answer": 82,
+            "answer": "Begin Intel Gathering",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>Begin Intel Gathering</p>"
         }
     },
     {
         "model": "campaign_trail.answer_feedback",
         "pk": 910,
         "fields": {
-            "answer": 91,
+            "answer": "Delay Intel Gathering",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>Delay Intel Gathering</p>"
         }
     },
     {
         "model": "campaign_trail.answer_feedback",
         "pk": 920,
         "fields": {
-            "answer": 92,
+            "answer": "Quiet Intel Gathering",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>Quiet Intel Gathering</p>"
         }
     },
     {
         "model": "campaign_trail.answer_feedback",
         "pk": 930,
         "fields": {
-            "answer": 93,
+            "answer": "Foreign Policy Hardline",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>Foreign Policy Hardline</p>"
         }
     },
     {
         "model": "campaign_trail.answer_feedback",
         "pk": 1010,
         "fields": {
-            "answer": 101,
+            "answer": "Foreign Policy Softline",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>Foreign Policy Softline</p>"
         }
     },
     {
         "model": "campaign_trail.answer_feedback",
         "pk": 1110,
         "fields": {
-            "answer": 111,
+            "answer": "Foreign Policy Third Way",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>Foreign Policy Third Way</p>"
         }
     },
     {
         "model": "campaign_trail.answer_feedback",
         "pk": 1120,
         "fields": {
-            "answer": 112,
+            "answer": "Faubus National Guard",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>Faubus National Guard</p>"
         }
     },
     {
         "model": "campaign_trail.answer_feedback",
         "pk": 1210,
         "fields": {
-            "answer": 121,
+            "answer": "Faubus Negotiation",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>Faubus Negotiation</p>"
         }
     },
     {
         "model": "campaign_trail.answer_feedback",
         "pk": 1220,
         "fields": {
-            "answer": 122,
+            "answer": "Faubus Ignoring",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>Faubus Ignoring</p>"
         }
     },
     {
         "model": "campaign_trail.answer_feedback",
         "pk": 1310,
         "fields": {
-            "answer": 131,
+            "answer": "Funding Decision Military",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>Funding Decision Military</p>"
         }
     },
     {
         "model": "campaign_trail.answer_feedback",
         "pk": 1320,
         "fields": {
-            "answer": 132,
+            "answer": "Funding Decision Civilian",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>Funding Decision Civilian</p>"
         }
     },
     {
         "model": "campaign_trail.answer_feedback",
         "pk": 1330,
         "fields": {
-            "answer": 133,
+            "answer": "Funding Decision Industrial",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>Funding Decision Industrial</p>"
         }
     },
     {
         "model": "campaign_trail.answer_feedback",
         "pk": 1410,
         "fields": {
-            "answer": 141,
+            "answer": "George Response",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>George Response</p>"
         }
     },
     {
         "model": "campaign_trail.answer_feedback",
         "pk": 1420,
         "fields": {
-            "answer": 142,
+            "answer": "Party Relations Basic",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>Party Relations Basic</p>"
         }
     },
     {
         "model": "campaign_trail.answer_feedback",
         "pk": 1430,
         "fields": {
-            "answer": 143,
+            "answer": "Infrastructure Dwight",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>Infrastructure Dwight</p>"
         }
     },
     {
         "model": "campaign_trail.answer_feedback",
         "pk": 1510,
         "fields": {
-            "answer": 151,
+            "answer": "Infrastructure Johnson",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>Infrastructure Johnson</p>"
         }
     },
     {
         "model": "campaign_trail.answer_feedback",
         "pk": 1520,
         "fields": {
-            "answer": 152,
+            "answer": "Infrastructure Helen",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>Infrastructure Helen</p>"
         }
     },
     {
         "model": "campaign_trail.answer_feedback",
         "pk": 1610,
         "fields": {
-            "answer": 161,
+            "answer": "Step Against Hoover",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>Step Against Hoover</p>"
         }
     },
     {
         "model": "campaign_trail.answer_feedback",
         "pk": 1620,
         "fields": {
-            "answer": 162,
+            "answer": "Civilian NASA",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>Civilian NASA</p>"
         }
     },
     {
         "model": "campaign_trail.answer_feedback",
         "pk": 1630,
         "fields": {
-            "answer": 163,
+            "answer": "Military NASA",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>Military NASA</p>"
         }
     },
     {
         "model": "campaign_trail.answer_feedback",
         "pk": 1710,
         "fields": {
-            "answer": 171,
+            "answer": "Howard Hughes Deal",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>Howard Hughes Deal</p>"
         }
     },
     {
         "model": "campaign_trail.answer_feedback",
         "pk": 1720,
         "fields": {
-            "answer": 172,
+            "answer": "Howard Hughes Rejection",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>Howard Hughes Rejection</p>"
         }
     },
     {
         "model": "campaign_trail.answer_feedback",
         "pk": 1810,
         "fields": {
-            "answer": 181,
+            "answer": "State Of The Union Strong",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>State Of The Union Strong</p>"
         }
     },
     {
         "model": "campaign_trail.answer_feedback",
         "pk": 1820,
         "fields": {
-            "answer": 182,
+            "answer": "State Of The Union Cautious",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>State Of The Union Cautious</p>"
         }
     },
     {
         "model": "campaign_trail.answer_feedback",
         "pk": 1830,
         "fields": {
-            "answer": 183,
+            "answer": "State Of The Union Assassination",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>State Of The Union Assassination</p>"
         }
     },
     {
         "model": "campaign_trail.answer_feedback",
         "pk": 1910,
         "fields": {
-            "answer": 191,
+            "answer": "Helen Senate Assignment",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>Helen Senate Assignment</p>"
         }
     },
     {
         "model": "campaign_trail.answer_feedback",
         "pk": 1920,
         "fields": {
-            "answer": 192,
+            "answer": "Helen Foreign Assignment",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>Helen Foreign Assignment</p>"
         }
     },
     {
         "model": "campaign_trail.answer_feedback",
         "pk": 2010,
         "fields": {
-            "answer": 201,
+            "answer": "Strenghten Cuba Garrison",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>Strenghten Cuba Garrison</p>"
         }
     },
     {
         "model": "campaign_trail.answer_feedback",
         "pk": 2020,
         "fields": {
-            "answer": 202,
+            "answer": "Hidden Files Basic",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>Hidden Files Basic</p>"
         }
     },
     {
         "model": "campaign_trail.answer_feedback",
-        "pk": 2030,
+        "pk": 9087,
         "fields": {
-            "answer": 203,
+            "answer": "Maintain Cuba Garrison",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>Maintain Cuba Garrison</p>"
         }
     },
     {
         "model": "campaign_trail.answer_feedback",
-        "pk": 2110,
+        "pk": 8654,
         "fields": {
-            "answer": 211,
+            "answer": "Coup Memo Basic",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>Coup Memo Basic</p>"
         }
     },
     {
         "model": "campaign_trail.answer_feedback",
-        "pk": 2120,
+        "pk": 345,
         "fields": {
-            "answer": 212,
+            "answer": "Infrastructure Pass",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>Infrastructure Pass</p>"
         }
     },
     {
         "model": "campaign_trail.answer_feedback",
-        "pk": 2130,
+        "pk": 3445,
         "fields": {
-            "answer": 213,
+            "answer": "Improvements Signing Yes",
             "candidate": 105,
-            "answer_feedback": "new"
+            "answer_feedback": "<p>Improvements Signing Yes</p>"
+        }
+    },    {
+        "model": "campaign_trail.answer_feedback",
+        "pk": 764,
+        "fields": {
+            "answer": "Improvements Signing No",
+            "candidate": 105,
+            "answer_feedback": "<p>Improvements Signing No</p>"
+        }
+    },    {
+        "model": "campaign_trail.answer_feedback",
+        "pk": 56,
+        "fields": {
+            "answer": "Cuba Revolt Response Strong",
+            "candidate": 105,
+            "answer_feedback": "<p>Cuba Revolt Response Strong</p>"
+        }
+    },    {
+        "model": "campaign_trail.answer_feedback",
+        "pk": 67,
+        "fields": {
+            "answer": "Cuba Revolt Response Weak",
+            "candidate": 105,
+            "answer_feedback": "<p>Cuba Revolt Response Weak</p>"
+        }
+    },    {
+        "model": "campaign_trail.answer_feedback",
+        "pk": 99,
+        "fields": {
+            "answer": "Remove Hoover Successful",
+            "candidate": 105,
+            "answer_feedback": "<p>Remove Hoover Successful</p>"
+        }
+    },    {
+        "model": "campaign_trail.answer_feedback",
+        "pk": 90,
+        "fields": {
+            "answer": "Remove Hoover Failure",
+            "candidate": 105,
+            "answer_feedback": "<p>Remove Hoover Failure</p>"
+        }
+    },    {
+        "model": "campaign_trail.answer_feedback",
+        "pk": 37,
+        "fields": {
+            "answer": "Remove Hoover Unattempted",
+            "candidate": 105,
+            "answer_feedback": "<p>Remove Hoover Unattempted</p>"
+        }
+    },    {
+        "model": "campaign_trail.answer_feedback",
+        "pk": 54,
+        "fields": {
+            "answer": "Commandeer FBI",
+            "candidate": 105,
+            "answer_feedback": "<p>Commandeer FBI</p>"
+        }
+    },    {
+        "model": "campaign_trail.answer_feedback",
+        "pk": 65,
+        "fields": {
+            "answer": "Weaken FBI",
+            "candidate": 105,
+            "answer_feedback": "<p>Weaken FBI</p>"
+        }
+    },    {
+        "model": "campaign_trail.answer_feedback",
+        "pk": 98,
+        "fields": {
+            "answer": "Military Ultimatum Basic",
+            "candidate": 105,
+            "answer_feedback": "<p>Military Ultimatum Basic</p>"
+        }
+    },    
+    {
+        "model": "campaign_trail.answer_feedback",
+        "pk": 21,
+        "fields": {
+            "answer": "Arrest MacArthur Success",
+            "candidate": 105,
+            "answer_feedback": "<p>Arrest MacArthur Success</p>"
         }
     },
+        {
+        "model": "campaign_trail.answer_feedback",
+        "pk": 45,
+        "fields": {
+            "answer": "Arrest MacArthur Failure",
+            "candidate": 105,
+            "answer_feedback": "<p>Arrest MacArthur Failure</p>"
+        }
+    },
+        {
+        "model": "campaign_trail.answer_feedback",
+        "pk": 36,
+        "fields": {
+            "answer": "Bureaucracy Plan",
+            "candidate": 105,
+            "answer_feedback": "<p>Bureaucracy Plan</p>"
+        }
+    },
+        {
+        "model": "campaign_trail.answer_feedback",
+        "pk": 28,
+        "fields": {
+            "answer": "Republic Bill",
+            "candidate": 105,
+            "answer_feedback": "<p>Republic Bill</p>"
+        }
+    },
+        {
+        "model": "campaign_trail.answer_feedback",
+        "pk": 29,
+        "fields": {
+            "answer": "Restoration Bill",
+            "candidate": 105,
+            "answer_feedback": "<p>Restoration Bill</p>"
+        }
+    },
+            {
+        "model": "campaign_trail.answer_feedback",
+        "pk": 30,
+        "fields": {
+            "answer": "Restoration Additions",
+            "candidate": 105,
+            "answer_feedback": "<p>Restoration Additions</p>"
+        }
+    },
+                {
+        "model": "campaign_trail.answer_feedback",
+        "pk": 31,
+        "fields": {
+            "answer": "Restoration Corruption",
+                "candidate": 105,
+                "answer_feedback": "<p>Restoration Corruption</p>"
+            }
+    },
+                {
+        "model": "campaign_trail.answer_feedback",
+        "pk": 32,
+        "fields": {
+            "answer": "Military Finale",
+            "candidate": 105,
+            "answer_feedback": "<p>Military Finale</p>"
+        }
+    },
+                {
+        "model": "campaign_trail.answer_feedback",
+        "pk": 33,
+        "fields": {
+            "answer": "Civil Rights Vote",
+            "candidate": 105,
+            "answer_feedback": "<p>Civil Rights Vote</p>"
+        }
+    },
+                {
+        "model": "campaign_trail.answer_feedback",
+        "pk": 34,
+        "fields": {
+            "answer": "Helen Final Decision Positive",
+            "candidate": 105,
+            "answer_feedback": "<p>Helen Final Decision Positive</p>"
+        }
+    },
+                {
+        "model": "campaign_trail.answer_feedback",
+        "pk": 35,
+        "fields": {
+            "answer": "Helen Final Decision Negative",
+            "candidate": 105,
+            "answer_feedback": "<p>Helen Final Decision Negative</p>"
+        }
+    },
+    
+
+    
+
 ]
 
 campaignTrail_temp.candidate_image_url = "https://files.catbox.moe/gztmh6.jpg";
@@ -7345,7 +7544,7 @@ const observer = new MutationObserver(() => {
     if (from && to && from.parentElement !== to) {
         to.innerHTML = ``
         to.appendChild(from);
-        to.innerHTML += QuestionImage
+        to.innerHTML += gameState.NeccessaryVars.QuestionPictureHolder
     }
 });
 
@@ -7357,7 +7556,7 @@ document.addEventListener("click", (e) => {
         if (from && to && from.parentElement !== to) {
             to.innerHTML = ``
             to.appendChild(from);
-            to.innerHTML += QuestionImage
+            to.innerHTML += gameState.NeccessaryVars.QuestionPictureHolder
         }
     }
 });
@@ -7373,8 +7572,10 @@ function getQuestionNumberFromPk(pk) {
 cyoAdventure = function (a) {
     ans = campaignTrail_temp.player_answers[campaignTrail_temp.player_answers.length-1];
   console.log("cyoAdventure CALLED at", new Date().toLocaleTimeString());
-console.log("Helen"+GAMESTATE.NeccessaryVars.Variables.HelenPower)
+console.log("Helen "+gameState.NeccessaryVars.Variables.HelenPower)
 logicalChoiceSystem();
+
+console.log(gameState.NeccessaryVars.QuestionPictureHolder)
 
 }
 const visitObserver = new MutationObserver(() => {
