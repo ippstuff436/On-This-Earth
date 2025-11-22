@@ -1,12 +1,10 @@
-
-
 var numT = 0
 
 var arthurStatus = `MacArthur stands as the central figure of an organized American elite`
 var hooverStatus = `Hoover stands as a major threat to your goals`
 var rockefellerStatus = `Rockefeller stands as an American oligarch`
 var hughesStatus = `Hughes is a threat`
-const gameState = {
+const GAMESTATE = {
     "NeccessaryVars": {
         "pk": "Bureau",
         "model": "Functionality",
@@ -24,7 +22,7 @@ const gameState = {
     "Question_Marker": [],
     "Statistics": {}
 }
-var QuestionImage = gameState.NeccessaryVars.QuestionPictureHolder
+var QuestionImage = GAMESTATE.NeccessaryVars.QuestionPictureHolder
 
 const textArray = {
     qtxt: {
@@ -1843,18 +1841,18 @@ if (returnedAnswer !== "parody") {
   const { pass_conditions, pass_effects, fail_effects } = returnedAnswer.fields;
 
   const allConditionsMet = Object.entries(pass_conditions).every(
-    ([key, value]) => gameState.NeccessaryVars.Variables[key] === value
+    ([key, value]) => GAMESTATE.NeccessaryVars.Variables[key] === value
   );
 
   if (allConditionsMet) {
     for (const [key, value] of Object.entries(pass_effects)) {
-      gameState.NeccessaryVars.Variables[key] =
-        (gameState.NeccessaryVars.Variables[key] || 0) + value;
+      GAMESTATE.NeccessaryVars.Variables[key] =
+        (GAMESTATE.NeccessaryVars.Variables[key] || 0) + value;
     }
   } else {
     for (const [key, value] of Object.entries(fail_effects)) {
-      gameState.NeccessaryVars.Variables[key] =
-        (gameState.NeccessaryVars.Variables[key] || 0) + value;
+      GAMESTATE.NeccessaryVars.Variables[key] =
+        (GAMESTATE.NeccessaryVars.Variables[key] || 0) + value;
     }
   }
 }
@@ -1864,7 +1862,7 @@ const AllQuestions = [];
 
 function applyFilter(slot) {
   return slot.filter(item =>
-    Object.entries(gameState.NeccessaryVars.Variables).every(([key, value]) =>
+    Object.entries(GAMESTATE.NeccessaryVars.Variables).every(([key, value]) =>
       key in item.fields.filter_conditions
         ? item.fields.filter_conditions[key] === value
         : true
@@ -1917,7 +1915,7 @@ AllQuestions.push(// so it filters the array of possible questions for each slot
 
 
     e.answers_json = AllAnswers.filter(item =>
-        Object.entries(gameState.NeccessaryVars.Variables).every(([key, value]) =>
+        Object.entries(GAMESTATE.NeccessaryVars.Variables).every(([key, value]) =>
             key in item.fields.filter_conditions
                 ? item.fields.filter_conditions[key] === value // since answers are fucking losers and can be used however, they just get one big array instead of the fancy slots that questions get
                 : true
@@ -7375,7 +7373,7 @@ function getQuestionNumberFromPk(pk) {
 cyoAdventure = function (a) {
     ans = campaignTrail_temp.player_answers[campaignTrail_temp.player_answers.length-1];
   console.log("cyoAdventure CALLED at", new Date().toLocaleTimeString());
-console.log("Helen"+gameState.NeccessaryVars.Variables.HelenPower)
+console.log("Helen"+GAMESTATE.NeccessaryVars.Variables.HelenPower)
 logicalChoiceSystem();
 
 }
