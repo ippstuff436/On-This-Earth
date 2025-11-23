@@ -7584,12 +7584,13 @@ function getQuestionNumberFromPk(pk) {
 
 
 cyoAdventure = function (a) {
-    ans = campaignTrail_temp.player_answers[campaignTrail_temp.player_answers.length-1];
-  console.log("cyoAdventure CALLED at", new Date().toLocaleTimeString());
-console.log("Helen "+gameState.NeccessaryVars.Variables.HelenPower)
-logicalChoiceSystem();
+    console.log("cyoAdventure CALLED at", new Date().toLocaleTimeString());
 
-console.log(gameState.NeccessaryVars.QuestionPictureHolder)
+    ans = campaignTrail_temp.player_answers[campaignTrail_temp.player_answers.length-1];
+
+    logicalChoiceSystem();
+
+    console.log(gameState)
 
 }
 const visitObserver = new MutationObserver(() => {
