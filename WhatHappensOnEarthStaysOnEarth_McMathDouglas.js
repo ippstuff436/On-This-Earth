@@ -67,6 +67,8 @@ const textArray = {
     },
     atxt: {
         basic: `basic`,
+        Vigor: `You focus here on being highly combative towards the intitutions anbd very ambitious, and highlight major changes`,
+        Procedural: `You focus here on being very procedural and cautious, and very not-rocky boat`,
         FocusHelen: `HELEN DOUGLAS: I spoke with Jack Kennedy and he seems to be interested in (. . .) However, I am unsure of how the votes would fall there (. . .)`,//`<img src='https://files.catbox.moe/89gy95.png' style='width:3%;height:3%;'>:Helen Douglas Speaking`,
         FocusClark: `CLARK CLIFFORD: I can bring out the reports on our planned legal efforts (. . .) Our legal appointments still need to be contacted and presented to congress (. . .)`,//`<img src='https://files.catbox.moe/8xkz7g.png' style='width:3%;height:3%;'>:Clifford Clark Speaking`,
         FocusGeorge: `GEORGE MARSHALL: I talked with some (. . .) We have no indicators that a coup is being planned as of now (. . .) I hear that there are some concerns among younger (. . .)`,//`<img src='https://files.catbox.moe/9jvuvm.png' style='width:3%;height:3%;'>: George Marshall Speaking`,
@@ -932,7 +934,7 @@ const AllAnswers = [
         "model": "campaign_trail.answer",
         "pk": "Clark Dialog",
         "fields": {
-            "pass_effects": {},
+            "pass_effects": { "LegalInfluence": 1 },
             "fail_effects": {},
             "pass_conditions": { "gameEnabled": true },
             "filter_conditions": { "gameEnabled": true },
@@ -944,7 +946,7 @@ const AllAnswers = [
         "model": "campaign_trail.answer",
         "pk": "George Dialog",
         "fields": {
-            "pass_effects": {},
+            "pass_effects": { "MilitaryInfluence": 1 },
             "fail_effects": {},
             "pass_conditions": { "gameEnabled": true },
             "filter_conditions": { "gameEnabled": true },
@@ -956,7 +958,7 @@ const AllAnswers = [
         "model": "campaign_trail.answer",
         "pk": "James Dialog",
         "fields": {
-            "pass_effects": {},
+            "pass_effects": { "AdministrativeInfluence": 1 },
             "fail_effects": {},
             "pass_conditions": { "gameEnabled": true },
             "filter_conditions": { "gameEnabled": true },
@@ -968,7 +970,7 @@ const AllAnswers = [
         "model": "campaign_trail.answer",
         "pk": "Speak to Eisenhower",
         "fields": {
-            "pass_effects": {},
+            "pass_effects": { "MilitaryInfluence": 1 },
             "fail_effects": {},
             "pass_conditions": { "gameEnabled": true },
             "filter_conditions": { "gameEnabled": true },
@@ -980,7 +982,7 @@ const AllAnswers = [
         "model": "campaign_trail.answer",
         "pk": "Speak to Hughes",
         "fields": {
-            "pass_effects": {},
+            "pass_effects": { "IndustrialInfluence": 1 },
             "fail_effects": {},
             "pass_conditions": { "gameEnabled": true },
             "filter_conditions": { "gameEnabled": true },
@@ -992,7 +994,7 @@ const AllAnswers = [
         "model": "campaign_trail.answer",
         "pk": "Speak to Faubus",
         "fields": {
-            "pass_effects": {},
+            "pass_effects": { "SouthernInfluence": 1 },
             "fail_effects": {},
             "pass_conditions": { "gameEnabled": true },
             "filter_conditions": { "gameEnabled": true },
@@ -1004,7 +1006,7 @@ const AllAnswers = [
         "model": "campaign_trail.answer",
         "pk": "Speak to Kennedy",
         "fields": {
-            "pass_effects": {},
+            "pass_effects": { "LiberalInfluence": 1 },
             "fail_effects": {},
             "pass_conditions": { "gameEnabled": true },
             "filter_conditions": { "gameEnabled": true },
@@ -1016,7 +1018,7 @@ const AllAnswers = [
         "model": "campaign_trail.answer",
         "pk": "Helen Reduced Role",
         "fields": {
-            "pass_effects": {},
+            "pass_effects": { "HelenPower": -1 },
             "fail_effects": {},
             "pass_conditions": { "gameEnabled": true },
             "filter_conditions": { "gameEnabled": true },
@@ -1028,7 +1030,7 @@ const AllAnswers = [
         "model": "campaign_trail.answer",
         "pk": "Helen Increased Role",
         "fields": {
-            "pass_effects": {},
+            "pass_effects": { "HelenPower": 2 },
             "fail_effects": {},
             "pass_conditions": { "gameEnabled": true },
             "filter_conditions": { "gameEnabled": true },
@@ -1038,16 +1040,28 @@ const AllAnswers = [
     },
     {
         "model": "campaign_trail.answer",
-        "pk": "Press Contact Basic",
+        "pk": "Press Contact Procedural",
         "fields": {
-            "pass_effects": {},
+            "pass_effects": { "Reform": 0 },
             "fail_effects": {},
             "pass_conditions": { "gameEnabled": true },
             "filter_conditions": { "gameEnabled": true },
             "question": "Press Briefing",
-            "description": textArray.atxt.basic
+            "description": textArray.atxt.Procedural
         }
     },
+    {
+        "model": "campaign_trail.answer",
+        "pk": "Press Contact Vigorous",
+        "fields": {
+            "pass_effects": { "Reform": 1, "MilitaryReaction": 1 },
+            "fail_effects": {},
+            "pass_conditions": { "gameEnabled": true },
+            "filter_conditions": { "gameEnabled": true },
+            "question": "Press Briefing",
+            "description": textArray.atxt.Vigor
+        }
+    }, 
     {
         "model": "campaign_trail.answer",
         "pk": "Military Contact",
@@ -1065,7 +1079,7 @@ const AllAnswers = [
         "model": "campaign_trail.answer",
         "pk": "Senate Progressive Allies",
         "fields": {
-            "pass_effects": {},
+            "pass_effects": { "SenateInfluence": 1, "SenateAlliesProg": true },
             "fail_effects": {},
             "pass_conditions": { "gameEnabled": true },
             "filter_conditions": { "gameEnabled": true },
