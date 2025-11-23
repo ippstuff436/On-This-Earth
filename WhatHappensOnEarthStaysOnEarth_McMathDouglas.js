@@ -138,7 +138,7 @@ const textArray = {
         RepublicBill: `try`,
         CivilRightsDraft: `try`,
         CorruptionDraft: `try`,
-        MilitaryCoupRespose: `You fucking die`,
+        SuccessfulCoup: `You fucking die`,
         RestorationVote: `try`,
         HelenFinalDecisionPositive: `You succeed with it and emnpower helebn`,
         HelenFinalDecisionNegative: `You fuck over helen`
@@ -1787,14 +1787,14 @@ const AllAnswers = [
     },
                 {
         "model": "campaign_trail.answer",
-        "pk": "Military Finale",
+        "pk": "Military Coup Victory",
         "fields": {
             "pass_effects": {},
             "fail_effects": {},
             "pass_conditions": { "gameEnabled": true },
             "filter_conditions": { "gameEnabled": true },
             "question": "Military Finale",
-            "description": textArray.atxt.MilitaryCoupRespose
+            "description": textArray.atxt.SuccessfulCoup
         }
     },
                 {
