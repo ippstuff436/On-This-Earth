@@ -213,7 +213,7 @@ ledger.innerHTML =
         <br>
         <br>
         <div style='display:flex;height:120px; overflow-x: hidden;overflow-y:hidden;'>
-        <img src='https://files.catbox.moe/qbyo00.png' style='width:90px;height:120px;'>
+        <img src='https://file.garden/aKoRqbLZKBsHizSA/Rockefeller.jpeg' style='width:90px;height:120px;'>
         <p style='display: block;margin-top: 4px;margin-bottom: 4px;margin-left: 2px;margin-right: 2px;'>
         <span style="display: inline-block; font-size: 1.5em; font-weight: bold; margin: 0.5em 0;">David Rockefeller</span>
         <br>
@@ -222,7 +222,7 @@ ledger.innerHTML =
         <br>
         <br>
         <div style='display:flex;height:120px;overflow-x: hidden; overflow-y:hidden;'>
-        <img src='https://files.catbox.moe/506msg.png' style='width:90px;height:120px;'>
+        <img src='https://file.garden/aKoRqbLZKBsHizSA/Howard.jpg' style='width:90px;height:120px;'>
         <p style='display: block;margin-top: 4px;margin-bottom: 4px;margin-left: 2px;margin-right: 2px;'>
         <span style="display: inline-block; font-size: 1.5em; font-weight: bold; margin: 0.5em 0;">Howard Hughes</span>
         <br>
@@ -7649,3 +7649,4 @@ visitObserver.observe(document.body, {
   characterData: true,
 });
 console.log(numT)
+
