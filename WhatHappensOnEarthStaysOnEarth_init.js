@@ -128,8 +128,12 @@ document.head.appendChild(favican);
 const textArray = {
     election: 
     ` 
-        The November election has raised issues regarding actions the executive branch. Despite the detrimental effects the current electeds may create, in aggregate, the effects of cancelling or overruling the general election would be inadvisable.
+        <h3>NOVICE - WORKING PAPER</h3>
+        <h4>OFFICE OF INTERNAL DISSENT, C.I.A.<br>CENTRAL OFFICE</h4>
+        <h4>November 20th, 1956</h4>
+        <p>The November election has raised issues regarding actions the executive branch. Despite the detrimental effects the current electeds may create, in aggregate, the effects of cancelling or overruling the general election would be inadvisable.
         Concurrent with the central office, we detail methods in this report, such that their actions do not impede our work...(continued on next page.)
+        </p>
     `,
         presidentSummary: 
     `
@@ -1106,6 +1110,7 @@ observer.observe(document.body, {
 
 
 // End of code //
+
 
 
 
