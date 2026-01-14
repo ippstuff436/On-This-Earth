@@ -753,6 +753,12 @@ stuff.innerHTML += `
 .person_image {
     border-color: #000;
 }
+.overlay {
+    height: 113%;
+}
+.overlay_window {
+    height: 97%;
+}
 select#candidate_id {
     appearance:none;
     color: black;
@@ -1116,6 +1122,7 @@ observer.observe(document.body, {
 
 
 // End of code //
+
 
 
 
