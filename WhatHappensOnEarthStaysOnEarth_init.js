@@ -725,7 +725,7 @@ stuff.innerHTML += `
   font-display: swap;
 }
 
-body {
+* {
   font-family: 'CourierElder', monospace;
 }
 
@@ -1111,4 +1111,5 @@ observer.observe(document.body, {
 
 
 // End of code //
+
 
