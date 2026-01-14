@@ -432,7 +432,7 @@ jet_data = {
 //#startcode
 
 
-corrr = '\n              <h2>On This Earth</h2><font id="wittyquote" size="4" color="white"><em>What comes to pass does so not so much because a few people want it to happen, as because the mass of citizens abdicate their responsibility and let things be.</em></font>\n            ';
+corrr = '\n              <h2>On This Earth</h2><font id="wittyquote" size="4" color="white"><em>"What comes to pass does so not so much because a few people want it to happen, as because the mass of citizens abdicate their responsibility and let things be."</em></font>\n            ';
 // original header: HUMILITY BEFORE HONOR
 // original quote: Behold, I am sending you out as sheep in the midst of wolves, so be wise as serpents and innocent as doves.
 nct_stuff.themes[nct_stuff.selectedTheme].coloring_title = "#000000";
@@ -1111,6 +1111,7 @@ observer.observe(document.body, {
 
 
 // End of code //
+
 
 
 
