@@ -7524,8 +7524,8 @@ campaignTrail_temp.answer_feedback_json = [
 
 ]
 
-campaignTrail_temp.candidate_image_url = "https://files.catbox.moe/gztmh6.jpg";
-campaignTrail_temp.running_mate_image_url = "https://files.catbox.moe/8pgczy.jpeg";
+campaignTrail_temp.candidate_image_url = "https://file.garden/aKoRqbLZKBsHizSA/whathappensonearth/McMathMain.jpg";
+campaignTrail_temp.running_mate_image_url = "https://file.garden/aKoRqbLZKBsHizSA/whathappensonearth/HelenDouglasMain.jpg";
 campaignTrail_temp.candidate_last_name = "McMath";
 campaignTrail_temp.running_mate_last_name = "Douglas";
 
@@ -7649,5 +7649,6 @@ visitObserver.observe(document.body, {
   characterData: true,
 });
 console.log(numT)
+
 
 
