@@ -127,14 +127,9 @@ document.head.appendChild(favican);
 
 const textArray = {
     election: 
-    `
-        <h3>NOVICE - WORKING PAPER</h3>
-        <h4>OFFICE OF INTERNAL DISSENT, C.I.A.<br>CENTRAL OFFICE</h4>
-        <h4>November 20th, 1956</h4> 
-        The November election has raised particular issues regarding potential actions the executive branch could take. Despite the possible detrimental effects the current President-elect and Vice President-elect may create, it has been determined that, in aggregate, the effects of cancelling or overruling the general election would be inadvisable.
-        Concurrent with the decision of the central office, we have determined several strategies and methods in this report, such that their actions do not impede our work...(continued on next page.)
-        <br>
-        <br>
+    ` 
+        The November election has raised issues regarding actions the executive branch. Despite the detrimental effects the current electeds may create, in aggregate, the effects of cancelling or overruling the general election would be inadvisable.
+        Concurrent with the central office, we detail methods in this report, such that their actions do not impede our work...(continued on next page.)
     `,
         presidentSummary: 
     `
@@ -1111,6 +1106,7 @@ observer.observe(document.body, {
 
 
 // End of code //
+
 
 
 
