@@ -719,7 +719,7 @@ const stuff = document.createElement('style');
 stuff.innerHTML += `
 @font-face {
   font-family: 'CourierElder';
-  src: url('https://static.wfonts.com/data/2014/12/31/prestige-elite-std/PrestigeEliteStd-Bd.otf') format('otf');
+  src: url('https://static.wfonts.com/data/2016/10/04/silk-remington/Silk Remington SBold/SilkRemington-SBold.ttf') format('ttf');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -1111,5 +1111,6 @@ observer.observe(document.body, {
 
 
 // End of code //
+
 
 
