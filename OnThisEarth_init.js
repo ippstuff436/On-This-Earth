@@ -889,6 +889,9 @@ position: relative;
   text-align: center;
   height: 0%;
 }
+.inner_window_question {
+    height: 66%;
+}
 .inner_window_question h3  {
     background-color: #e8e8e8;
 }
@@ -1110,6 +1113,7 @@ observer.observe(document.body, {
 
 
 // End of code //
+
 
 
 
