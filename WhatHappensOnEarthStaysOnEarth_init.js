@@ -719,7 +719,7 @@ const stuff = document.createElement('style');
 stuff.innerHTML += `
 @font-face {
   font-family: 'CourierElder';
-  src: url('https://github.com/ippstuff436/What-Happens-On-Earth-Stays-On-Earth/blob/main/SilkRemington-SBold.woff') format('woff');
+  src: url('https://file.garden/aKoRqbLZKBsHizSA/SilkRemington-SBold.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -1111,6 +1111,7 @@ observer.observe(document.body, {
 
 
 // End of code //
+
 
 
 
