@@ -140,10 +140,10 @@ const textArray = {
         <h3>BIOGRAPHIC BRIEF</h3>
         <h4>CENTRAL REFERENCE SERVICE, C.I.A.</h4>
         <h4>January 1957</h4>
-        Sidney Sanders McMath, a populist and an anti-corruption figure, is set to take Office within the week. He was elected as Governor of Arkansas in 1949, and left office on January 8th. Born in an impoverished part of Arkansas, he served in the Pacific War as a marine, and entered state politics on his return. Though at the time he was an obscure character, he rose to national attention during his Governorship.
+        Sidney Sanders McMath, populist, anti-corruption, set to take office this week. Elected Arkansas Governor et. 1949, left office on January 8th. Born in an impoverished part of Arkansas, he served in the Pacific War as a marine, and entered state politics on his return. Though at the time he was an obscure character, he rose to national attention during his Governorship.
         <br>
         <br>
-        McMath is a popular and effective politician. His administrative, rhetorical, and organizational skills have enabled him to perform well in his environment. Despite his populist appeal, he was able to position himself such that the Democratic National Convention nominated him for office. Following this, he won the general election due to strong mobilization efforts against entrenched political interests. Though his impressive results have been suprising, it is not expected to pose a significant threat due to the fragmented nature of his coalition.
+        McMath is a popular and effective politician. His administrative, rhetorical, and organizational skills have enabled him to perform well. Though his impressive results have been suprising, it is not expected to pose a significant threat due to the fragmented nature of his coalition.
         <br>
         <br>
     `,
@@ -1110,6 +1110,7 @@ observer.observe(document.body, {
 
 
 // End of code //
+
 
 
 
