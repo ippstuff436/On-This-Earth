@@ -205,7 +205,7 @@ campaignTrail_temp.candidate_json = [
             "color_hex": "#852e2e",
             "secondary_color_hex": "#90C0FF",
             "is_active": 1,
-            "image_url": "https://files.catbox.moe/jwplp6.PNG",
+            "image_url": "https://file.garden/aKoRqbLZKBsHizSA/whathappensonearth/McMathOpen.jpg",
             "electoral_victory_message": "<h3>Congratulations! You have won the 1960 Presidential Election.</h3><p>Hopefully you can move the United States in a more modern direction after eight quiet years of Eisenhower, while holding the line against the Soviet Union. At your young age, you have the potential to define the entire decade as President, and perhaps to hand the torch to one of your brothers in the future.</p>",
             "electoral_loss_message": "<h3>Sorry, you have lost the 1960 Presidential Election.</h3><p>It was always going to be tough to defeat the Vice President to someone as popular as Eisenhower. However, you still have your seat in the Senate. At your young age, there is no reason you couldn't be a strong contender for President in 1964 or 1968, especially if this election was close. Let's just hope the Democrats don't blame your defeat on your religion.</p>",
             "no_electoral_majority_message": "<h3>No candidate has won a majority in the Electoral College.</h3><p>The Democrats have an advantage in the House of Representatives, so you are probably in good shape. However, a lot depends on how you deal with Harry Byrd. It's possible that some kind of deal will need to be struck with Byrd or Nixon to get a clean majority in the House.</p>",
@@ -1110,6 +1110,7 @@ observer.observe(document.body, {
 
 
 // End of code //
+
 
 
 
