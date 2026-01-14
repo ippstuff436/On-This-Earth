@@ -274,7 +274,7 @@ campaignTrail_temp.candidate_json = [
             "color_hex": "#0000FF",
             "secondary_color_hex": "#90C0FF",
             "is_active": 0,
-            "image_url": "https://file.garden/aKoRqbLZKBsHizSA/whathappensonearth/HelenDouglasOpen.jpeg",
+            "image_url": "https://file.garden/aKoRqbLZKBsHizSA/whathappensonearth/HelenDouglasOpen1.jpeg",
             "electoral_victory_message": "'",
             "electoral_loss_message": "'",
             "no_electoral_majority_message": "'",
@@ -1110,6 +1110,7 @@ observer.observe(document.body, {
 
 
 // End of code //
+
 
 
 
