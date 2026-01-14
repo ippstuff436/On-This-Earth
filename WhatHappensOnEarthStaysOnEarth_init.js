@@ -719,7 +719,7 @@ const stuff = document.createElement('style');
 stuff.innerHTML += `
 @font-face {
   font-family: 'CourierElder';
-  src: url('https://files.catbox.moe/8946fi.woff2') format('woff2');
+  src: url('https://static.wfonts.com/data/2014/12/31/prestige-elite-std/PrestigeEliteStd-Bd.otf') format('otf');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -1111,3 +1111,4 @@ observer.observe(document.body, {
 
 
 // End of code //
+
