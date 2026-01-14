@@ -896,6 +896,7 @@ position: relative;
 }
 .inner_window_question h3  {
     background-color: #e8e8e8;
+    margin-top: 7px;
 }
 .campaign_trail_start_emphasis  {
     background-color: #919191;
@@ -1115,6 +1116,7 @@ observer.observe(document.body, {
 
 
 // End of code //
+
 
 
 
