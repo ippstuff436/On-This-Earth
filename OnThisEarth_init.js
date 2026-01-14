@@ -727,7 +727,9 @@ stuff.innerHTML += `
 * {
   font-family: 'CourierElder', monospace;
 }
-
+#game_window {
+    border-style: none;
+}
 #map_container {
     height: 90%;
     width: 75%;
@@ -1113,6 +1115,7 @@ observer.observe(document.body, {
 
 
 // End of code //
+
 
 
 
