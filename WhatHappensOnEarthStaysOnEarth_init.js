@@ -718,14 +718,17 @@ const stuff = document.createElement('style');
 
 stuff.innerHTML += `
 @font-face {
-    font-family: 'CourierElder';
-    src: url('https://files.catbox.moe/8946fi.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-  }
-  * {
-    font-family: 'CourierElder', sans-serif;
-  }
+  font-family: 'CourierElder';
+  src: url('https://files.catbox.moe/8946fi.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: 'CourierElder', monospace;
+}
+
 #map_container {
     height: 90%;
     width: 75%;
@@ -1104,6 +1107,7 @@ observer.observe(document.body, {
   childList: true,
   subtree: true
 });
+
 
 
 // End of code //
