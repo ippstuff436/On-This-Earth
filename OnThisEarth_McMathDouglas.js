@@ -389,33 +389,6 @@ endingPicker = (out, totv, aa, quickstats) => {
     return construct(0);
 }
 
-e.questions_json = [
-    {
-        "model": "campaign_trail.question",
-        "pk": "default",
-        "fields": {
-            "effects": {},
-            "pass_conditions": { "gameEnabled": true },
-            "filter_conditions": { "gameEnabled": true },
-            "description": null,
-            "likelihood": 1
-        }
-    },
-]
-e.answers_json = [
-    {
-        "model": "campaign_trail.answer",
-        "pk": "default",
-        "fields": {
-            "pass_effects": {},
-            "fail_effects": {},
-            "pass_conditions": { "gameEnabled": true },
-            "filter_conditions": { "gameEnabled": true },
-            "question": "default",
-            "description": null
-        }
-    }
-]
 var numT = 0
 
 e.questions_json = [
