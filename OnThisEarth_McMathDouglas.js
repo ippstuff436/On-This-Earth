@@ -20,7 +20,7 @@ const gameState = {
         },
         "QuestionPictureHolder": `<img style='margin-top: -18px;width: 254px;height: 105px;object-fit: cover;object-position: top;border-style: double;border-color: white;'src='https://i.ibb.co/9HtQhBDP/373c5cbe-a4ad-4689-a529-3b2674fd37e4-1024x671.jpg'></img>`
     }
-}
+}lll
 
 const textArray = {
     qtxt: {
