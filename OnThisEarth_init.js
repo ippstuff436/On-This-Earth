@@ -446,7 +446,7 @@ $(".container")[0].style.backgroundColor = "#000000";
 
 document.getElementById("header").src = "https://file.garden/aKoRqbLZKBsHizSA/whathappensonearth/Untitled.png";
 
-document.body.background = "https://i.imgur.com/hct22J0.jpeg";
+document.body.background = "https://github.com/ippstuff436/On-This-Earth/blob/main/sources/OnThisEarthBackground.png?raw=true";
 
 document.head.innerHTML += "<style>#results_container {color:aliceblue;} .inner_window_w_desc {background-color:#000000!important;}</style>";
 
