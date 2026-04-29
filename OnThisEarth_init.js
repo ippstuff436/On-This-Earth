@@ -135,27 +135,23 @@ const textArray = {
         Concurrent with the central office, we detail methods in this report, such that their actions do not impede our work...(continued on next page.)
         </p>
     `,
-        presidentSummary: 
+    presidentSummary: 
     `
         <h3>BIOGRAPHIC BRIEF</h3>
         <h4>CENTRAL REFERENCE SERVICE, C.I.A.</h4>
         <h4>January 1957</h4>
-        Sidney Sanders McMath, populist, anti-corruption, set to take office this week. Elected Arkansas Governor et. 1949, left office on January 8th. Born in an impoverished part of Arkansas, he served in the Pacific War as a marine, and entered state politics on his return. Though at the time he was an obscure character, he rose to national attention during his Governorship.
-        <br>
-        <br>
-        McMath is a popular and effective politician. His administrative, rhetorical, and organizational skills have enabled him to perform well. Though his impressive results have been suprising, it is not expected to pose a significant threat due to the fragmented nature of his coalition.
+        <p>Sidney Sanders McMath, populist, anti-corruption, set to take office this week. Elected Arkansas Governor et. 1949, left office on January 8th. Born in an impoverished part of Arkansas, he served in the Pacific War as a marine, and entered state politics on his return. Though at the time he was an obscure character, he rose to national attention during his Governorship.</p>
+        <p>McMath is a popular and effective politician. His administrative, rhetorical, and organizational skills have enabled him to perform well. Though his impressive results have been suprising, it is not expected to pose a significant threat due to the fragmented nature of his coalition.</p>
         <br>
         <br>
     `,
-            vicePresidentSummary: 
+    vicePresidentSummary: 
     `
         <h3>BIOGRAPHIC BRIEF</h3>
         <h4>CENTRAL REFERENCE SERVICE, C.I.A.</h4>
         <h4>January 1957</h4>
-        Helen Gahagan Douglas spent the majority of her early life as an actress and opera singer. However, following her stunning Senate victory in 1950 over Thomas Henry Kuchel, she served as a strong voice in the Senate for reformist tendencies. Moreover, her ability to coordinate members of the House and Senate into reliable voting patterns has been remarkable. 
-        <br>
-        <br>
-        In the early 1930s, she had a close relationship with the deceased Roosevelt family, particularly Eleanor Roosevelt. This was the primary cause of her brief detainment in July 1935, before being released. Along with this, she was also an outspoken opponent of the defunct Nazi German Government. In our assessment of her character, we find indications that she may create tension within the administration's coalition due to her ideological commitments.
+        <p>Helen Gahagan Douglas spent the majority of her early life as an actress and opera singer. However, following her stunning Senate victory in 1950 over Thomas Henry Kuchel, she served as a strong voice in the Senate for reformist tendencies. Moreover, her ability to coordinate members of the House and Senate into reliable voting patterns has been remarkable. </p>
+        <p">In the early 1930s, she had a close relationship with the deceased Roosevelt family, particularly Eleanor Roosevelt. This was the primary cause of her brief detainment in July 1935, before being released. Along with this, she was also an outspoken opponent of the defunct Nazi German Government. In our assessment of her character, we find indications that she may create tension within the administration's coalition due to her ideological commitments.</p>
         <br>
         <br>
     `,
@@ -184,8 +180,8 @@ campaignTrail_temp.election_json = [
             "recommended_reading": "<h4 style=\"margin-top: 0.5em;\">1960 Election Books and Links</h4>David Pietrusza - <a href=\"http://www.amazon.com/exec/obidos/ASIN/1402777469/amhius20-20\" target=\"_blank\">1960--LBJ vs. JFK vs. Nixon: The Epic Campaign That Forged Three Presidencies</a></br>Theodore White - <a href=\"http://www.amazon.com/exec/obidos/ASIN/0061900605/amhius20-20\" target=\"_blank\">The Making of the President 1960</a></br>W. J. Rorabaugh - <a href=\"http://www.amazon.com/exec/obidos/ASIN/0700618872/amhius20-20\" target=\"_blank\">The Real Making of the President: Kennedy, Nixon, and the 1960 Election</a></br><a href=\"http://www.davidpietrusza.com/1960-cast-of-characters.html\" target=\"_blank\">1960 Cast of Characters</a></br><a href=\"https://www.youtube.com/watch?v=gbrcRKqLSRw\" target=\"_blank\">First Kennedy-Nixon Debate (video)</a></br><a href=\"https://www.youtube.com/watch?v=_CtSW-HQlxQ\" target=\"_blank\">The Making of the President 1960 (video documentary, 1963)</a>",
             "has_visits": 0,
             "no_electoral_majority_image": "https://www.jetsimon.com/public/static/images/1960-no-majority-photo.jpg",
-            "creator": "bayardgirli",
-            "display_year": "What Happens On Earth Stays On Earth"
+            "creator": "u/SimilarAd",
+            "display_year": "On this Earth"
         }
     }
 ]
@@ -417,19 +413,7 @@ campaignTrail_temp.temp_election_list = [
     }
 ]
 
-jet_data = {
-    "headerColor": "#000000",
-    "windowColor": "#000000",
-    "containerColor": "#000000",
-    "innerWindowColor": "#000000",
-    "bannerImageUrl": "https://i.ibb.co/tD0gJ0t/Bryan-Header-alt.webp",
-    "backgroundImageUrl": "https://i.imgur.com/hct22J0.jpeg",
-    "endingTextColor": "aliceblue",
-    "customQuote": "Behold, I am sending you out as sheep in the midst of wolves, so be wise as serpents and innocent as doves."
-}
-
 //#startcode
-
 
 corrr = '\n              <h2>On This Earth</h2><font id="wittyquote" size="4" color="white"><em>"Reaction wields today such power as perhaps never before in the modern history of mankind."</em></font>\n            ';
 // original header: HUMILITY BEFORE HONOR
@@ -444,7 +428,7 @@ $("#game_window")[0].style.backgroundColor = nct_stuff.themes[nct_stuff.selected
 
 $(".container")[0].style.backgroundColor = "#000000";
 
-document.getElementById("header").src = "https://file.garden/aKoRqbLZKBsHizSA/whathappensonearth/Untitled.png";
+document.getElementById("header").src = "https://github.com/ippstuff436/On-This-Earth/blob/main/sources/OnThisEarthBanner.png?raw=true";
 
 document.body.background = "https://github.com/ippstuff436/On-This-Earth/blob/main/sources/OnThisEarthBackground.png?raw=true";
 
@@ -474,16 +458,15 @@ document.addEventListener('keydown', function(event) {
 });
 
 function checkInput() {
-    if (inputString.toLowerCase() === 'whathappensonearthstaysonearth') {
-        console.log("Whoever makes a practice of sinning is of the devil, for the devil has been sinning from the beginning. The reason the Son of God appeared was to destroy the works of the devil."); 
+    if (inputString.toLowerCase() === 'how do you make your way on this earth?') {
+        console.log("I do not know, what is it that people? For weeping for drinking, for lenses to see through. What is this? It is nothing but obliteration, the anihilation, the end and the after. Take your time, it will not be long for you."); 
         e.candidate_json[1].fields.is_active = 1;
     } else {
-        console.log("In the beginning was the Word, and the Word was with God, and the Word was God");
+        console.log("I do not know. I cannot know. It is quiet here.");
     }
 
     inputString = '';
 }
-
 
 function createMusicBox(playerElementId) {
     const playerContainer = document.getElementById(playerElementId);
@@ -596,12 +579,37 @@ function createMusicBox(playerElementId) {
     });
 
     const songs = [
-        { title: 'The Party\'s Over', src: 'https://file.garden/aKoRqbLZKBsHizSA/whathappensonearth/The%20Partys%20Over.mp3' },
-        { title: 'Somebody Buy Me a Drink', src: 'https://file.garden/aKoRqbLZKBsHizSA/whathappensonearth/Somebody%20Buy%20Me%20a%20Drink.mp3' },
-        { title: 'Stars Fell On Alabama', src: 'https://files.catbox.moe/yijsra.mp3' },
-        { title: 'Waiting Around to Die', src: 'https://file.garden/aKoRqbLZKBsHizSA/whathappensonearth/Waiting%20Around%20to%20Die.mp3' },
+        { title: 'The Party\'s Over', src: `https://file.garden/aKoRqbLZKBsHizSA/Julie/The%20Party's%20Over.mp3` },
+        { title: 'No Moon At All', src: `https://file.garden/aKoRqbLZKBsHizSA/Julie/No%20Moon%20At%20All.mp3` },
+        { title: 'I Should Care', src: `https://file.garden/aKoRqbLZKBsHizSA/Julie/I%20Should%20Care.mp3` },
+        { title: 'The Days of Wine and Roses', src: `https://file.garden/aKoRqbLZKBsHizSA/Julie/The%20Days%20of%20Wine%20and%20Roses.mp3` },
+        { title: 'Laura', src: `https://file.garden/aKoRqbLZKBsHizSA/Julie/Laura.mp3` }
     ];
-    let currentSongIndex = 0;
+    
+    function savePlayerState() {
+        const state = {
+            currentSongIndex: currentSongIndex,
+            currentTime: audio.currentTime,
+            isPlaying: isPlaying,
+            volume: audio.volume,
+        };
+        localStorage.setItem('musicPlayerState', JSON.stringify(state));
+    }
+
+    function loadPlayerState() {
+        const saved = localStorage.getItem('musicPlayerState');
+        if (saved) {
+            try {
+                return JSON.parse(saved);
+            } catch (e) {
+                return null;
+            }
+        }
+        return null;
+    }
+
+    const savedState = loadPlayerState();
+    let currentSongIndex = savedState ? savedState.currentSongIndex : 0;
     let isPlaying = false;
     let isLooping = false;
     let isShuffling = false;
@@ -627,6 +635,7 @@ function createMusicBox(playerElementId) {
             currentSongIndex = index;
             loadSong(index);
             playSong();
+            savePlayerState();
         });
         trackList.appendChild(li);
     });
@@ -635,12 +644,14 @@ function createMusicBox(playerElementId) {
         audio.play();
         isPlaying = true;
         playPauseBtn.innerHTML = '&#10074;&#10074;'; 
+        savePlayerState();
     }
 
     function pauseSong() {
         audio.pause();
         isPlaying = false;
         playPauseBtn.innerHTML = '&#9658;';
+        savePlayerState();
     }
 
     playPauseBtn.addEventListener('click', () => {
@@ -651,12 +662,14 @@ function createMusicBox(playerElementId) {
         currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
         loadSong(currentSongIndex);
         playSong();
+        savePlayerState();
     });
 
     nextBtn.addEventListener('click', () => {
         currentSongIndex = (currentSongIndex + 1) % songs.length;
         loadSong(currentSongIndex);
         playSong();
+        savePlayerState();
     });
 
     loopBtn.addEventListener('click', () => {
@@ -678,11 +691,15 @@ function createMusicBox(playerElementId) {
         }
         loadSong(currentSongIndex);
         playSong();
+        savePlayerState();
     });
 
     audio.addEventListener('timeupdate', () => {
         progressBar.value = audio.currentTime;
         currentTime.textContent = formatTime(audio.currentTime);
+        if (Math.floor(audio.currentTime) % 5 === 0) {
+            savePlayerState();
+        }
     });
 
     audio.addEventListener('loadedmetadata', () => {
@@ -692,10 +709,16 @@ function createMusicBox(playerElementId) {
 
     progressBar.addEventListener('input', () => {
         audio.currentTime = progressBar.value;
+        savePlayerState();
     });
 
     volumeSlider.addEventListener('input', () => {
         audio.volume = volumeSlider.value;
+        savePlayerState();
+    });
+
+    window.addEventListener('beforeunload', () => {
+        savePlayerState();
     });
 
     function formatTime(seconds) {
@@ -705,7 +728,26 @@ function createMusicBox(playerElementId) {
     }
 
     loadSong(currentSongIndex);
-    playSong();
+    
+    if (savedState) {
+        volumeSlider.value = savedState.volume;
+        audio.volume = savedState.volume;
+        
+        audio.addEventListener('canplay', () => {
+            audio.currentTime = savedState.currentTime;
+            if (savedState.isPlaying) {
+                audio.play();
+                isPlaying = true;
+                playPauseBtn.innerHTML = '&#10074;&#10074;';
+            }
+        }, { once: true });
+    } else {
+        audio.addEventListener('canplay', () => {
+            audio.play();
+            isPlaying = true;
+            playPauseBtn.innerHTML = '&#10074;&#10074;';
+        }, { once: true });
+    }
 }
 
 
@@ -723,7 +765,6 @@ stuff.innerHTML += `
   font-style: normal;
   font-display: swap;
 }
-
 * {
   font-family: 'CourierElder', monospace;
 }
