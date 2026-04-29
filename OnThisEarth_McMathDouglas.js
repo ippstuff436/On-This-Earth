@@ -196,7 +196,7 @@ ledger.innerHTML =
 <div style="white-space: normal;overflow-wrap: break-word; display: flex; justify-content: space-around; gap: 20px; height: 335px; width: 306px; overflow-y: scroll; color: white;">
     <div>
         <div style='display:flex;height:120px; overflow-x: hidden;overflow-y:hidden;'>
-        <img src='https://file.garden/aKoRqbLZKBsHizSA/MacArthur.jpg' style='width:90px;height:120px;'>
+        <img src='https://github.com/ippstuff436/On-This-Earth/blob/main/sources/TheConspiracy.png?raw=true' style='width:90px;height:120px;'>
         <p style='display: block;margin-top: 4px;margin-bottom: 4px;margin-left: 2px;margin-right: 2px;'>
         <span style="display: inline-block; font-size: 1.5em; font-weight: bold; margin: 0.5em 0;">The Conspiracy</span>
         <br>
@@ -204,7 +204,7 @@ ledger.innerHTML =
         </div>
         <br>
         <div style='display:flex;height:120px;overflow-x: hidden;overflow-y:hidden;'>
-        <img src='https://file.garden/aKoRqbLZKBsHizSA/Hoover.jpg' style='width:90px;height:120px;'>
+        <img src='https://github.com/ippstuff436/On-This-Earth/blob/main/sources/TheOligarchy.png?raw=true' style='width:90px;height:120px;'>
         <p style='display: block;margin-top: 4px;margin-bottom: 4px;margin-left: 2px;margin-right: 2px;'>
         <span style="display: inline-block; font-size: 1.5em; font-weight: bold; margin: 0.5em 0;">The Oligarchy</span>
         <br>
@@ -213,7 +213,7 @@ ledger.innerHTML =
         <br>
         <br>
         <div style='display:flex;height:120px; overflow-x: hidden;overflow-y:hidden;'>
-        <img src='https://file.garden/aKoRqbLZKBsHizSA/Rockefeller.jpeg' style='width:90px;height:120px;'>
+        <img src='https://github.com/ippstuff436/On-This-Earth/blob/main/sources/TheRepublic.png?raw=true' style='width:90px;height:120px;'>
         <p style='display: block;margin-top: 4px;margin-bottom: 4px;margin-left: 2px;margin-right: 2px;'>
         <span style="display: inline-block; font-size: 1.5em; font-weight: bold; margin: 0.5em 0;">The Republic</span>
         <br>
@@ -222,7 +222,7 @@ ledger.innerHTML =
         <br>
         <br>
         <div style='display:flex;height:120px;overflow-x: hidden; overflow-y:hidden;'>
-        <img src='https://file.garden/aKoRqbLZKBsHizSA/Howard.jpg' style='width:90px;height:120px;'>
+        <img src='https://github.com/ippstuff436/On-This-Earth/blob/main/sources/TheExecutive.png?raw=true' style='width:90px;height:120px;'>
         <p style='display: block;margin-top: 4px;margin-bottom: 4px;margin-left: 2px;margin-right: 2px;'>
         <span style="display: inline-block; font-size: 1.5em; font-weight: bold; margin: 0.5em 0;">The Executive</span>
         <br>
@@ -231,7 +231,7 @@ ledger.innerHTML =
         <br>
         <br>
         <div style='display:flex;height:120px;overflow-x: hidden; overflow-y:hidden;'>
-        <img src='https://file.garden/aKoRqbLZKBsHizSA/Howard.jpg' style='width:90px;height:120px;'>
+        <img src='https://github.com/ippstuff436/On-This-Earth/blob/main/sources/TheWorkers.png?raw=true' style='width:90px;height:120px;'>
         <p style='display: block;margin-top: 4px;margin-bottom: 4px;margin-left: 2px;margin-right: 2px;'>
         <span style="display: inline-block; font-size: 1.5em; font-weight: bold; margin: 0.5em 0;">The Workers</span>
         <br>
