@@ -409,7 +409,7 @@ campaignTrail_temp.temp_election_list = [
         "id": 11,
         "year": 1960,
         "is_premium": 0,
-        "display_year": "What Happens On Earth Stays On Earth"
+        "display_year": "On this Earth"
     }
 ]
 
